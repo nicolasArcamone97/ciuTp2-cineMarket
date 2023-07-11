@@ -5,8 +5,11 @@ import Body from './componentes/Body'
 import CardPelicula from './componentes/CardPelicula';
 import Favoritas from './componentes/Favoritas';
 import Footer from './componentes/Footer';
-
+import Register from './componentes/Register';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function App() {
@@ -21,6 +24,20 @@ function App() {
   const [peliculas, setPeliculas] = useState([]);
   const [busquedaDeUsuario, setBusqueda] = useState("");
   const [pelicula, setPelicula] = useState({});
+  
+  //hook vacio con diferentes usuarios
+  const [usuarios, editarUsuarios] = useState([]);
+ 
+
+
+  // funcion que toma el usuario nuevo y lo mete en el array
+  const agregarUsuarios = (usuario) => {
+      editarUsuarios([
+        ...usuarios,
+        usuario
+      ])
+  };
+
   // lista de favoritas
   let [peliculasFavoritas, setPeliculasFavoritas] = useState([]);
 
@@ -59,12 +76,11 @@ function App() {
   const seleccionarPelicula = async (pelicula) => {
     obtenerPelicula(pelicula.id);
     setPelicula(pelicula);
-    console.log(pelicula)
   };
 
 
+  // Obtener la lista de favavoritas del localStorage
   useEffect(() => {
-    // Obtener la lista de favs del localStorage
     const storedFavoritas = localStorage.getItem('favoritas');
     if (storedFavoritas) {
         peliculasFavoritas = JSON.parse(storedFavoritas)
@@ -72,28 +88,51 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    // Guardar lala lista de favs del localStorage cada vez que se actualice "listaDeFavs"
+
+  // Guarda la lista de favoritas del localStorage cada vez que se actualice "peliculasFavoritas"
+  useEffect(() => { 
     localStorage.setItem('favoritas', JSON.stringify(peliculasFavoritas));
   }, [peliculasFavoritas]);
 
 
-  // funcion que toma pelicula por parametro y la agrega a lista de fav, sin pisar las anteriores por eso los ...
+  // funcion que toma pelicula por parametro y la agrega a lista de favpritas, sin pisar las anteriores
   const agregarPeliculaFavorita = (pelicula) => {
     setPeliculasFavoritas([...peliculasFavoritas, pelicula]);
+    toast.success('Película agregada a favoritos', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      
+    });
     };
 
+  // funcion para eliminar pelicula de la lista de favoritas
   const eliminarPeliculaFavorita = (id) => {
     const peliculasActualizadas = peliculasFavoritas.filter(
       (pelicula) => pelicula.id !== id
     );
     setPeliculasFavoritas(peliculasActualizadas);
+    toast.error('Eliminada correctamente', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
     };
+
 
   useEffect(() => {
     obtenerPeliculas();
   }, []);
-
 
 
 return (
@@ -120,11 +159,14 @@ return (
                     />
                     ))}
               />
+
               <Footer/>
             </>
           } />
-           <Route path="/Favoritas" element={<Favoritas peliculasFavoritas={peliculasFavoritas} funcionEliminar={eliminarPeliculaFavorita} imagen = {IMAGE_PATH} funcion={seleccionarPelicula} />} />
-   
+           <Route path="/Favoritas" element={<Favoritas peliculasFavoritas={peliculasFavoritas} funcionEliminar={eliminarPeliculaFavorita}  imagen = {IMAGE_PATH} funcion={seleccionarPelicula} />} />
+
+           <Route path="/Register" element= {<Register agregarUsuarios={agregarUsuarios} />} />
+          
 
         </Routes>
       </div>

@@ -16,7 +16,8 @@ const CardPelicula = ( {key,evento, titulo, fecha , imagen,info,eventoBoton,nomb
                                 <span>{fecha}</span>
                         </div>
                         <div className='right-content'>
-                            <button className={ esBotonDeFav ? "card-btn" : "card-btn-eliminar"} onClick={eventoBoton}>{nombreBoton}</button>
+                            <button className={ esBotonDeFav ? "card-btn" : "card-btn-eliminar"} id={"liveToastBtn"}  onClick={eventoBoton}>{nombreBoton}</button>
+                            
                         </div>
                     </div>
                     <div className='card-info'>

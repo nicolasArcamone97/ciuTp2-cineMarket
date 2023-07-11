@@ -9,6 +9,7 @@
     overflow: hidden;
     transition: all 0.5 ease;
     margin: 3rem;
+    
 }
 
 .card .card-content {
@@ -58,6 +59,7 @@
 
 .card:hover {
     cursor: pointer;
+    border: 1px solid #2091d3;
 }
 
 .card:hover .card-content {

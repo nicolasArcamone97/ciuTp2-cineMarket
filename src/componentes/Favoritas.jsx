@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Body from './Body';
 import CardPelicula from './CardPelicula';
+import Footer from './Footer';
 
 const Favoritas = ({peliculasFavoritas, funcionEliminar, funcion,imagen}) => {
     return ( 
@@ -9,7 +10,7 @@ const Favoritas = ({peliculasFavoritas, funcionEliminar, funcion,imagen}) => {
      <Header />
      
      <Body
-        titulo={"Estas son tus peliculas Favoritas:"}
+        titulo={"Estas son tus peliculas Favoritas: " }
          contenido={peliculasFavoritas.map((pelicula) => (
           <CardPelicula
               key={pelicula.id}
@@ -24,6 +25,7 @@ const Favoritas = ({peliculasFavoritas, funcionEliminar, funcion,imagen}) => {
           />
           ))}
         />
+        <Footer/>
 
      </div>
     );
