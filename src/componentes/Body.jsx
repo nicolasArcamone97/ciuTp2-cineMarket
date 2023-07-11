@@ -10,7 +10,7 @@ const Body = ( {contenido, titulo} ) => {
         <div className='contenedor-principal-peliculas'>
             <Container className='contenedor-peliculas'>
                     <Row>
-                         <h2>{titulo}</h2>
+                        <h2>{titulo}</h2>
                         {contenido}
                     </Row>
             </Container>

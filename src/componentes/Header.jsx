@@ -7,7 +7,7 @@ import '../imagenes/claqueta.png'
 import '../hojas-de-estilo/Header.css'
 import { Outlet } from 'react-router-dom';
 
-const Header = ( {evento,eventoDos} ) => {
+const Header = ( {eventoBuscador, eventoSetBusqueda} ) => {
 
     return (  
         <Navbar expand="lg" className="navbar navbar-expand-md navbar-light">
@@ -24,11 +24,12 @@ const Header = ( {evento,eventoDos} ) => {
                         navbarScroll
                         >
                         <Nav.Link href="/">Inicio</Nav.Link>
-                        <Nav.Link href="#"><Button className='boton-header-carrito'>Alquilar <i class="bi bi-cart4"></i></Button> </Nav.Link>
+                        <Nav.Link href="/Favoritas">Favoritas</Nav.Link>
+                        <Nav.Link href="/Register">Registrate</Nav.Link>
                         </Nav>
                         <Form 
                             className='d-flex' 
-                            onSubmit={evento}
+                            onSubmit={eventoBuscador}
                             
                         > 
                         <Form.Control
@@ -36,7 +37,7 @@ const Header = ( {evento,eventoDos} ) => {
                             placeholder="Search"
                             className="me-2"
                             aria-label="Search"
-                            onChange={eventoDos}
+                            onChange={eventoSetBusqueda}
                             
                         />
                         <Button  type='submit' className="boton-header">Search</Button>

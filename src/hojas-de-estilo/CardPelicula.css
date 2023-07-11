@@ -1,62 +1,112 @@
-.card-pelicula {
+.card {
+    position: relative;
+    font-size: 14px;
+    border: 1px solid gray;
+    border-radius:0.4rem;
+    line-height: 20px;
+    width: 285px;
+    height: 360px;
+    overflow: hidden;
+    transition: all 0.5 ease;
+    margin: 3rem;
+}
+
+.card .card-content {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 100px 10px 5px;
+    background-image: linear-gradient(188deg,rgba(51, 55, 69, 0),rgba(16,21,40,0.95) );
+    transition: all 0.5s ease; 
+}
+
+.card .card-content .card-header {
+    padding: 8px 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin:2rem;
-    background-color: transparent;
-    box-shadow: 0px 5px 5px 8px rgba(0, 0, 0, 0.5);
-    transition: transform .2s;
-    width: 12rem;
-    padding: 0px;
-    border-radius: 0px;
+    justify-content: space-between;
+}
+
+.card .card-content .card-btn-eliminar{
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 8px;
+    border: 1px solid rgba(255, 255, 255. 0.5);
+    border-radius: 0.4rem;
+    background: transparent;
+    transition: all 0.5s ease;
+}
+
+.card .card-content .card-btn {
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 8px;
+    border: 1px solid rgba(255, 255, 255. 0.5);
+    border-radius: 0.4rem;
+    background: transparent;
+    transition: all 0.5s ease;
+}
+
+.card .card-content .card-info {
+    max-height: 0;
+    opacity: 0;
+    border-top: 1px solid rgba(255, 255, 255. 0.5);
+    overflow: hidden;
+    transition: all 0.5s ease;
 }
 
 .card:hover {
-    transform: scale(1.1);
-    border: solid 1px #2091d3 ;
-  }
-
-.card-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 1px;
-    height: 6rem;
+    cursor: pointer;
 }
 
-.card-img {
-    height: 15rem;
+.card:hover .card-content {
+    background-image: linear-gradient(180deg, rgba(51,55,69,0), #101528 48%);
+}
+
+.card:hover .card-btn{
+    background-color: #2091d3;
+    border-color: #2091d3;
 }
 
 
-.card-title{
-    color: #97a8b2;
-    width: 100%;
-    text-align: center;
-    font-size: 13px;
-}
-
-.card-text {
-    color: #2091d3;
-    width: 100%;
-    text-align: center;
-    font-size: 13px;
-    font-weight: bold;
+.card:hover .card-btn-eliminar{
+    background-color: #d32020;
+    border-color: #d3202f;
 }
 
 
 
-@media  screen and  (max-width: 500px){
+.card:hover .card-info {
+    max-height: 200px;
+    opacity: 1;
+    padding: 8px 0;
 
-    .card-pelicula {
-        background-color: transparent;
-        box-shadow: 0px 5px 5px 8px rgba(0, 0, 0, 0.5);
-        transition: none;
-        margin: 1rem;
+}
+
+
+span {
+    color: #12efec;
+}
+
+h4 {
+    font-weight: 600;
+    color: #fff;
+}
+
+.card p {
+    color: #fff;
+    padding: 13px;
+}
+
+
+
+
+@media  screen and  (min-width: 1400px){
+        .card {
+            margin: 2em 0;
+        }
     
-    }
-    .card-pelicula:hover {transform: none;} 
 
 
 }
