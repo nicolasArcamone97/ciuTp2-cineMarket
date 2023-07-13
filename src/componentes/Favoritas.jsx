@@ -4,6 +4,8 @@ import Body from './Body';
 import CardPelicula from './CardPelicula';
 import Footer from './Footer';
 
+
+
 const Favoritas = ({peliculasFavoritas, funcionEliminar, funcion,imagen}) => {
     return ( 
      <div>
@@ -26,7 +28,6 @@ const Favoritas = ({peliculasFavoritas, funcionEliminar, funcion,imagen}) => {
           ))}
         />
         <Footer/>
-
      </div>
     );
 }

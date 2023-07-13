@@ -5,7 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import '../imagenes/claqueta.png'
 import '../hojas-de-estilo/Header.css'
-import { Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 const Header = ( {eventoBuscador, eventoSetBusqueda} ) => {
 
@@ -24,8 +25,8 @@ const Header = ( {eventoBuscador, eventoSetBusqueda} ) => {
                         navbarScroll
                         >
                         <Nav.Link href="/">Inicio</Nav.Link>
-                        <Nav.Link href="/Favoritas">Favoritas</Nav.Link>
-                        <Nav.Link href="/Register">Registrate</Nav.Link>
+                        <Nav.Link as={Link} to="/favoritas">Favoritas</Nav.Link>
+                        <Nav.Link as={Link} to="/register">Registrate</Nav.Link>
                         </Nav>
                         <Form 
                             className='d-flex' 
@@ -44,7 +45,6 @@ const Header = ( {eventoBuscador, eventoSetBusqueda} ) => {
                         </Form> 
                     </Navbar.Collapse>
                 </Container>
-                <Outlet/>
         </Navbar>
     );
 }

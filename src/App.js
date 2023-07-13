@@ -162,10 +162,9 @@ return (
               <Footer/>
             </>
           } />
-           <Route path="/Favoritas" element={<Favoritas peliculasFavoritas={peliculasFavoritas} funcionEliminar={eliminarPeliculaFavorita}  imagen = {IMAGE_PATH} funcion={seleccionarPelicula} />} />
+           <Route path="/favoritas" element={<Favoritas peliculasFavoritas={peliculasFavoritas} funcionEliminar={eliminarPeliculaFavorita}  imagen = {IMAGE_PATH} funcion={seleccionarPelicula} />} />
 
-           <Route path="/Register" element= {<Register agregarUsuarios={agregarUsuarios} />} />
-          
+           <Route path="/register" element={<Register agregarUsuarios={agregarUsuarios} />} />
         </Routes>
     </BrowserRouter>
     </div>
