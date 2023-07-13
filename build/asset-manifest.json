@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.fb1a033e.css",
-    "main.js": "/static/js/main.657303e5.js",
+    "main.css": "/static/css/main.49ccc6fe.css",
+    "main.js": "/static/js/main.e25b4bfa.js",
     "static/media/claqueta.png": "/static/media/claqueta.10efface3e74905ea023.png",
-    "static/media/ejemplo-peli.avif": "/static/media/ejemplo-peli.156251bd133ec1c02ce2.avif",
+    "static/media/fondo-peliculas.jpeg": "/static/media/fondo-peliculas.2970ec382875f985c783.jpeg",
     "index.html": "/index.html",
-    "main.fb1a033e.css.map": "/static/css/main.fb1a033e.css.map",
-    "main.657303e5.js.map": "/static/js/main.657303e5.js.map"
+    "main.49ccc6fe.css.map": "/static/css/main.49ccc6fe.css.map",
+    "main.e25b4bfa.js.map": "/static/js/main.e25b4bfa.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb1a033e.css",
-    "static/js/main.657303e5.js"
+    "static/css/main.49ccc6fe.css",
+    "static/js/main.e25b4bfa.js"
   ]
 }
