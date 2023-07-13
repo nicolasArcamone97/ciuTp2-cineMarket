@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header';
-import Body from './Body';
-import CardPelicula from './CardPelicula';
-import Footer from './Footer';
+import Header from '../Header';
+import Body from '../Body';
+import CardPelicula from '../CardPelicula';
+import Footer from '../Footer';
 
 
 

@@ -3,7 +3,7 @@ import './App.css';
 import Header from './componentes/Header'
 import Body from './componentes/Body'
 import CardPelicula from './componentes/CardPelicula';
-import Favoritas from './componentes/Favoritas';
+import Favoritas from './componentes/Favoritas/Favoritas';
 import Footer from './componentes/Footer';
 import Register from './componentes/Register';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
