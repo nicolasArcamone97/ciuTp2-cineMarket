@@ -24,7 +24,7 @@ const Header = ( {eventoBuscador, eventoSetBusqueda} ) => {
                         style={{ maxHeight: '200px' }}
                         navbarScroll
                         >
-                        <Nav.Link href="/">Inicio</Nav.Link>
+                        <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                         <Nav.Link as={Link} to="/favoritas">Favoritas</Nav.Link>
                         <Nav.Link as={Link} to="/register">Registrate</Nav.Link>
                         </Nav>
