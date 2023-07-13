@@ -138,7 +138,6 @@ function App() {
 return (
     <div className='App'>
   <BrowserRouter>
-      <div>
         <Routes>
           <Route path="/" element={
             <>
@@ -167,9 +166,7 @@ return (
 
            <Route path="/Register" element= {<Register agregarUsuarios={agregarUsuarios} />} />
           
-
         </Routes>
-      </div>
     </BrowserRouter>
     </div>
       );
