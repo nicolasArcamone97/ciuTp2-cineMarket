@@ -3,10 +3,10 @@ import './App.css';
 import Header from './componentes/Header'
 import Body from './componentes/Body'
 import CardPelicula from './componentes/CardPelicula';
-import Favoritas from './componentes/Favoritas/Favoritas';
+import Favoritas from './componentes/Favoritas';
 import Footer from './componentes/Footer';
 import Register from './componentes/Register';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {HashRouter, Route, Routes } from 'react-router-dom';
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -137,7 +137,7 @@ function App() {
 
 return (
     <div className='App'>
-  <BrowserRouter>
+   <HashRouter>
         <Routes>
           <Route path="/" element={
             <>
@@ -166,7 +166,7 @@ return (
 
            <Route path="/register" element={<Register agregarUsuarios={agregarUsuarios} />} />
         </Routes>
-    </BrowserRouter>
+        </HashRouter>
     </div>
       );
     }
