@@ -97,6 +97,7 @@ function App() {
 
   // funcion que toma pelicula por parametro y la agrega a lista de favpritas, sin pisar las anteriores
   const agregarPeliculaFavorita = (pelicula) => {
+    if(!peliculasFavoritas.some((peli => peli.id === pelicula.id))){
     setPeliculasFavoritas([...peliculasFavoritas, pelicula]);
     toast.success('Película agregada a favoritos', {
       position: "top-right",
@@ -108,8 +109,13 @@ function App() {
       progress: undefined,
       theme: "dark",
       
-    });
+    });}
     };
+    
+
+
+
+
 
   // funcion para eliminar pelicula de la lista de favoritas
   const eliminarPeliculaFavorita = (id) => {
